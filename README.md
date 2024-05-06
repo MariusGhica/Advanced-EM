@@ -8,15 +8,20 @@ The input to the forward solver is the incident field, the PEC scattering limit 
 $$E^{sca}(x) \approx \frac{\mu_0\omega}{4} \sum_{l = 1}^N H_0^{(2)}(k_0|\mathbf{x}- \mathbf{x'_l}|)J_z(\mathbf{x'_l})$$
 
 $$\sum_{l = 1}^N c_l H_0^{(2)}(k_0|\mathbf{x_m}- \mathbf{x'_l}|) = - E^{inc}(\mathbf{x_m})$$
+
 ## Inverse scattering
-In the inverse scattering problem, akin to the forward scattering problem, the current distribution is satisfying the observed electrical field 
+In the inverse scattering problem, akin to the forward scattering problem, the current distribution is satisfying the observed electrical field
 $\left.E(\mathbf{x})\right|_\Gamma$ along the observation curve $\Gamma$:
-$$B.C. : \;\left.E(\mathbf{x})\right|_\Gamma = \left.E^{inc}(\mathbf{x})\right|_\Gamma + \left.E^{sca}(\mathbf{x})\right|_\Gamma.$$
+$$B.C. \approx E(\mathbf{x_m}) = E^{inc}(\mathbf{x_m}) + E^{sca}(\mathbf{x_m}) \; \forall \mathbf{x_m} \in \Gamma : m = 1,...,M'.$$
 
 Discretizing the observation curve into $M'$ points:
+
 $$B.C. \approx E(\mathbf{x_m}) = E^{inc}(\mathbf{x_m}) + E^{sca}(\mathbf{x_m}) \; \forall \mathbf{x_m} \in \Gamma : m = 1,...,M'.$$
+
 Discretizing the scattered electrical field sources into $N'$ points, we obtain:
+
 $$ E(\mathbf{x_m}) - E_{inc}(\mathbf{x_m}) = \sum_{l = 1}^{N'} H_0^{(2)}(k_0|\mathbf{x_m}-\mathbf{x'_l}|)c_l.$$
+
 This can be translated into a matrix-vector form using identical $\mathbf{A}$ and $\mathbf{y}$ expressions with:
 $$b_m = E(\mathbf{x_m}) - E_{inc}(\mathbf{x_m}).$$
 
